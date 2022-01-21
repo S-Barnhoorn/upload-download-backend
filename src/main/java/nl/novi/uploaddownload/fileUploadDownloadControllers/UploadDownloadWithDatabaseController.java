@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-
+@CrossOrigin
 @RestController
 public class UploadDownloadWithDatabaseController {
 
@@ -74,8 +74,8 @@ public class UploadDownloadWithDatabaseController {
     }
 
 //    post for multiple uploads to database
-    @PostMapping("/multiple/upload/db")
-    List<FileUploadResponse> multipleUpload(@RequestParam("files") MultipartFile [] files) {
+    @PostMapping("multiple/upload/db")
+    List<FileUploadResponse> multipleUpload(@RequestParam("filess") MultipartFile [] files) {
 
         if(files.length > 7) {
             throw new RuntimeException("to many files selected");

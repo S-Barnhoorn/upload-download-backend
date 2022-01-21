@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+@CrossOrigin
 @RestController
 public class UploadDownloadWithFileSystemController {
     private FileStorageService fileStorageService;
@@ -68,7 +69,7 @@ public class UploadDownloadWithFileSystemController {
     }
 
 //    post for multiple uploads
-    @PostMapping("/multiple/upload")
+    @PostMapping("multiple/upload")
     List<FileUploadResponse> multipleUpload(@RequestParam("files") MultipartFile[] files) {
 
         if(files.length > 7) {
